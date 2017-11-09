@@ -26,27 +26,17 @@ public class AlarmSoundService extends Service {
     @Override
 
     public void onCreate() {
-
         super.onCreate();
-
         //Start media player
-
         mediaPlayer = MediaPlayer.create(this, R.raw.b);
         mediaPlayer.start();
         mediaPlayer.setLooping(false);//set l1ooping true to run it infinitely
 
     }
-
-
-
     @Override
-
     public void onDestroy() {
-
         super.onDestroy();
-
         //On destory stop and release the media player
-
         if (mediaPlayer != null && mediaPlayer.isPlaying()) {
             mediaPlayer.stop();
             mediaPlayer.reset();
